@@ -1,3 +1,4 @@
+using KeyboardEventSystem;
 using KeyboardUtils;
 using UnityEngine;
 
@@ -5,13 +6,8 @@ namespace DefaultNamespace
 {
     public class KeyboardControlledPoint : MonoBehaviour
     {
-        [SerializeField] private KeyCode _moveUp;
-        [SerializeField] private KeyCode _moveDown;
-        [SerializeField] private KeyCode _moveLeft;
-        [SerializeField] private KeyCode _moveRight;
-
         [SerializeField] private float _movementSpeed = 1;
-
+        [SerializeField] private int _frameGap = 2;
         private RepeatingKey _upKey;
         private RepeatingKey _downKey;
         private RepeatingKey _leftKey;
@@ -21,10 +17,10 @@ namespace DefaultNamespace
         {
             int numerator = 2;
             int initialDelay = 6;
-            _upKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), _moveUp);
-            _downKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), _moveDown);
-            _leftKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), _moveLeft);
-            _rightKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), _moveRight);
+            _upKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), KeyMap.ActiveMap.DotMoveUp.KeyCode, _frameGap);
+            _downKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), KeyMap.ActiveMap.DotMoveDown.KeyCode, _frameGap);
+            _leftKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), KeyMap.ActiveMap.DotMoveLeft.KeyCode, _frameGap);
+            _rightKey = new RepeatingKey(new InverseFunctionWithInitialDelay(numerator, initialDelay), KeyMap.ActiveMap.DotMoveRight.KeyCode, _frameGap);
         }
 
         protected virtual void Update()

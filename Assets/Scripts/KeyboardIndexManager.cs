@@ -1,4 +1,5 @@
 using ElementHoverComponents;
+using KeyboardEventSystem;
 using UnityEngine;
 
 public class KeyboardIndexManager : MonoBehaviour
@@ -55,28 +56,19 @@ public class KeyboardIndexManager : MonoBehaviour
     }
     private void HandleKeyboardInput()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
-            {
-                MoveToPreviousElement();
-            }
-            else
-            {
-                MoveToNextElement();
-            }
-        }
-
-
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            MoveToPreviousElement();
-        } else if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (KeyMap.ActiveMap.ForwardThroughList.WasPressedThisFrame())
         {
             MoveToNextElement();
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (KeyMap.ActiveMap.BackwardThroughListKey.WasPressedThisFrame())
+        {
+            MoveToPreviousElement();
+        }
+
+
+
+        if (KeyMap.ActiveMap.KeyboardClickKey.WasPressedThisFrame())
         {
             if (activeMediatorIndex != null)
             {

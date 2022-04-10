@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda96c72cbc4485497f93adb5ba553f9, type: 3}
+  m_Name: KeyboardKeyMapping
+  m_EditorClassIdentifier: 
+  dotMoveLeft:
+    keyCode: 97
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
+  dotMoveRight:
+    keyCode: 100
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
+  dotMoveUp:
+    keyCode: 119
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
+  dotMoveDown:
+    keyCode: 115
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
+  forwardThroughList:
+    keyCode: 9
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
+  backwardThroughListKey:
+    keyCode: 9
+    isShiftHeld: 1
+    isCtrlHeld: 0
+    isAltHeld: 0
+  keyboardClickKey:
+    keyCode: 13
+    isShiftHeld: 0
+    isCtrlHeld: 0
+    isAltHeld: 0
